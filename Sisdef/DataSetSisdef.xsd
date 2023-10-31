@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetSisdef" targetNamespace="http://tempuri.org/DataSetSisdef.xsd" xmlns:mstns="http://tempuri.org/DataSetSisdef.xsd" xmlns="http://tempuri.org/DataSetSisdef.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_SisdefConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_SisdefConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Sisdef.Properties.Settings.GlobalReference.Default.db_SisdefConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableControleDefeitosTableAdapter" GeneratorDataComponentClassName="DataTableControleDefeitosTableAdapter" Name="DataTableControleDefeitos" UserDataComponentName="DataTableControleDefeitosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_SisdefConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillControleDefeitos" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataControleDefeitos" GeneratorSourceName="FillControleDefeitos" GetMethodModifier="Public" GetMethodName="GetDataControleDefeitos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataControleDefeitos" UserSourceName="FillControleDefeitos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT tblRegistroDefeito.dtRegistro, tblTipoEquipamento.nomeTipoEquipamento, tblDefeito.nomeDefeito, tblRegistroDefeito.hr_inicio, tblRegistroDefeito.hr_final
+FROM     tblDefeito INNER JOIN
+                  tblRegistroDefeito ON tblDefeito.codDefeito = tblRegistroDefeito.codDefeito INNER JOIN
+                  tblEquipamento ON tblRegistroDefeito.codEquipamento = tblEquipamento.codEquipamento INNER JOIN
+                  tblTipoEquipamento ON tblEquipamento.codTipoEquipamento = tblTipoEquipamento.codTipoEquipamento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="dtRegistro" DataSetColumn="dtRegistro" />
+              <Mapping SourceColumn="nomeTipoEquipamento" DataSetColumn="nomeTipoEquipamento" />
+              <Mapping SourceColumn="nomeDefeito" DataSetColumn="nomeDefeito" />
+              <Mapping SourceColumn="hr_inicio" DataSetColumn="hr_inicio" />
+              <Mapping SourceColumn="hr_final" DataSetColumn="hr_final" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetSisdef" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSetSisdef" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetSisdef">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTableControleDefeitos" msprop:Generator_RowEvHandlerName="DataTableControleDefeitosRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableControleDefeitosRowDeleted" msprop:Generator_RowDeletingName="DataTableControleDefeitosRowDeleting" msprop:Generator_RowEvArgName="DataTableControleDefeitosRowChangeEvent" msprop:Generator_TablePropName="DataTableControleDefeitos" msprop:Generator_RowChangedName="DataTableControleDefeitosRowChanged" msprop:Generator_RowChangingName="DataTableControleDefeitosRowChanging" msprop:Generator_TableClassName="DataTableControleDefeitosDataTable" msprop:Generator_RowClassName="DataTableControleDefeitosRow" msprop:Generator_TableVarName="tableDataTableControleDefeitos" msprop:Generator_UserTableName="DataTableControleDefeitos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="dtRegistro" msprop:Generator_ColumnPropNameInRow="dtRegistro" msprop:Generator_ColumnPropNameInTable="dtRegistroColumn" msprop:Generator_ColumnVarNameInTable="columndtRegistro" msprop:Generator_UserColumnName="dtRegistro" type="xs:dateTime" />
+              <xs:element name="nomeTipoEquipamento" msprop:Generator_ColumnPropNameInRow="nomeTipoEquipamento" msprop:Generator_ColumnPropNameInTable="nomeTipoEquipamentoColumn" msprop:Generator_ColumnVarNameInTable="columnnomeTipoEquipamento" msprop:Generator_UserColumnName="nomeTipoEquipamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomeDefeito" msprop:Generator_ColumnPropNameInRow="nomeDefeito" msprop:Generator_ColumnPropNameInTable="nomeDefeitoColumn" msprop:Generator_ColumnVarNameInTable="columnnomeDefeito" msprop:Generator_UserColumnName="nomeDefeito">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hr_inicio" msprop:Generator_ColumnPropNameInRow="hr_inicio" msprop:Generator_ColumnPropNameInTable="hr_inicioColumn" msprop:Generator_ColumnVarNameInTable="columnhr_inicio" msprop:Generator_UserColumnName="hr_inicio" type="xs:duration" />
+              <xs:element name="hr_final" msprop:Generator_ColumnPropNameInRow="hr_final" msprop:Generator_ColumnPropNameInTable="hr_finalColumn" msprop:Generator_ColumnVarNameInTable="columnhr_final" msprop:Generator_UserColumnName="hr_final" type="xs:duration" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
